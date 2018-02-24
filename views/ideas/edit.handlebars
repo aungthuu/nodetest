@@ -1,0 +1,24 @@
+{{#each errors}}
+  <div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+
+<div class="card card-body">
+    <h1 class="display-3">Edit Videos</h1>
+    <form action="/ideas/{{result.id}}?_method=PUT" method="post">
+    <input type="hidden" name="_method" value="PUT">
+        <div class="form-group">
+            <label for='title' >Title</label>
+            <input type="text" class="form-control" name="title" 
+             value="{{result.title}}" required>
+        </div>
+        <div class="form-group">
+            <label for='detail' >Details</label>
+            <textarea class="form-control" name="detail"
+             required>{{result.detail}}</textarea>
+        </div>
+        <button type='submit' class='btn btn-dark'>Submit</button>
+    </form>
+</div>
+
